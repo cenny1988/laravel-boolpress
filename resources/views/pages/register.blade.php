@@ -12,6 +12,7 @@
     </div>
 @endif
 
+{{-- form registrazione nuovo utente --}}
 <form action="{{route('register')}}" method="POST">
     
     @method('POST')

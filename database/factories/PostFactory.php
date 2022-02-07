@@ -11,9 +11,9 @@ $factory->define(Post::class, function (Faker $faker) {
         'title' => $faker -> unique()->sentence(),
         'sub_title' => $faker -> unique()->sentence(),
         'author' => $faker -> name(),
-        'release' => $faker -> optional()->date(),
+        'likes' => $faker -> numberBetween(0, 5000),
         'place' => $faker -> optional()->city(),
-        'img' => $faker -> word() . ".png",
+        'img' => $faker -> optional()->word() . ".png",
         'content' => $faker -> text()
     ];
 });

@@ -48,10 +48,22 @@
 
     </form>
 
+    
 @else
-    <posts-component></posts-component>
+    {{-- Componente Vue --}}
+    {{-- <posts-component></posts-component> --}}
+    <a class="btn btn-info my-3" href="{{route('post.createPost')}}">Add Post</a>
 
 @endguest
+    {{-- caricamento posts --}}
+    <h3 class="h3">Lista Posts:</h3>
+    @foreach ($posts as $post)
+        <div class="mt-2"> 
+            Titolo: {{$post->title}} <br> 
+            - Autore: {{$post->author}} - Data: {{$post->created_at}} <br>
+            - Categoria:
+        </div>
+    @endforeach
 
 
 @endsection

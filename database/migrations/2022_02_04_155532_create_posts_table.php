@@ -19,10 +19,10 @@ class CreatePostsTable extends Migration
             $table->string('title')->unique();
             $table->string('sub_title', 150)->unique();
             $table->string('author', 60);
-            $table->date('release')->nullable();
+            $table->unsignedBigInteger('likes')->default(0);
             $table->string('place')->nullable();
-            $table->string('img');
-            $table->text('content');
+            $table->string('img')->nullable();
+            $table->text('content')->nullable();
 
             $table->timestamps();
         });

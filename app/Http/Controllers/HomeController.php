@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Post;
 
 class HomeController extends Controller
 {
@@ -16,13 +18,23 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function index()
+    
+    public function createPost()
     {
-        return view('home');
+        return view('pages.create-post');
+    }
+
+    public function storePost(Request $request)
+    {
+        $data = $request -> validate([
+            'title' => 'required|string',
+            'sub_title' => 'required|min:3|max:150',
+            'content' => 'nullable|string'
+        ]);
+
+        $data['author'] = Auth::user()->name;
+        $post = Post::create($data);
+
+        return redirect()->route('home');
     }
 }

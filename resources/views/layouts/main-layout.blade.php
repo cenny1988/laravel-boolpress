@@ -11,14 +11,16 @@
     <title>My Blog</title>
 </head>
 <body>
-
-    @include('components.header')
-
+    
     <div id="app" class="container">
+        @include('components.header')
+        
         @yield('content')
+        
+        @include('components.footer')
     </div>
 
-    @include('components.footer')
+
     
 </body>
 </html>
