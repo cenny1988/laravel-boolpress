@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+// da aggiungere per personalizzare il logout
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -36,5 +38,13 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    // Al logout ritorno la pagina che voglio, ma devo inludereil seguente snippet
+    // use Illuminate\Support\Facades\Auth;
+    public function logout()
+    {
+        Auth::logout();
+        return redirect() -> route('home');
     }
 }
