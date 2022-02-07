@@ -16,5 +16,5 @@ Route::get('/logout', 'Auth\LoginController@logout') -> name('logout');
 Route::get('/register', 'GuestController@register') -> name('register');
 Route::post('/register', 'Auth\RegisterController@register');
 
-Route::get('/create/post', 'HomeController@createPost') -> name('post.createPost');
-Route::post('/store/post', 'HomeController@storePost') -> name('post.storePost');
+Route::get('/post/create', 'HomeController@createPost') -> name('post.createPost');
+Route::post('/post/store', 'HomeController@storePost') -> name('post.storePost');
