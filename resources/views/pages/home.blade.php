@@ -61,7 +61,7 @@
         <div class="mt-2"> 
             Titolo: {{$post->title}} <br> 
             - Autore: {{$post->author}} - Data: {{$post->created_at}} <br>
-            - Categoria:
+            - Categoria: {{$post->category->name}}
         </div>
     @endforeach
 
