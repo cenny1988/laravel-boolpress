@@ -60,7 +60,7 @@
     @foreach ($posts as $post)
         <div class="mt-2"> 
             Titolo: {{$post->title}} - Sottotitolo: {{$post->sub_title}} <br> 
-            - Autore: {{$post->author}} - Data: {{$post->created_at->format('d/m/Y H:s')}} <br>
+            - Autore: {{$post->author}} - Data: {{$post->created_at->format('d/m/Y H:s')}} <br> {{-- formato ora cambiato  --}}
             - Categoria: {{$post->category->name}} <br>
             - Tags: 
             @foreach ($post->tags as $tag)
