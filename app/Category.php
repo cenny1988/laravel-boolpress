@@ -14,8 +14,8 @@ class Category extends Model
 
     public function category()
     {
-        return $this -> belongsTo('App\Category');
         return $this -> belongsTo(Category::class);
+        // return $this -> belongsTo('App\Category');   <-----> Metodo equivalente
     }
 
     public function posts()

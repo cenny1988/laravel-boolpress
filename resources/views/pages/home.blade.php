@@ -59,9 +59,13 @@
     <h3 class="h3">Lista Posts:</h3>
     @foreach ($posts as $post)
         <div class="mt-2"> 
-            Titolo: {{$post->title}} <br> 
-            - Autore: {{$post->author}} - Data: {{$post->created_at}} <br>
-            - Categoria: {{$post->category->name}}
+            Titolo: {{$post->title}} - Sottotitolo: {{$post->sub_title}} <br> 
+            - Autore: {{$post->author}} - Data: {{$post->created_at->format('d/m/Y H:s')}} <br>
+            - Categoria: {{$post->category->name}} <br>
+            - Tags: 
+            @foreach ($post->tags as $tag)
+                <span> #{{$tag -> name}} </span>
+            @endforeach
         </div>
     @endforeach
 
