@@ -12,12 +12,6 @@ class Category extends Model
         'descript'
     ];
 
-    public function category()
-    {
-        return $this -> belongsTo(Category::class);
-        // return $this -> belongsTo('App\Category');   <-----> Metodo equivalente
-    }
-
     public function posts()
     {
         return $this->hasMany(Post::class);
